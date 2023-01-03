@@ -1,0 +1,637 @@
+git -----> parent command
+
+to clone the remote account to the local machine
+------------------------------------------
+git clone https://github.com/Mohannew/DevOPs.git
+
+
+READ me. md --------> meta data 
+
+
+
+git init ----------------   source code is converted into working directory
+
+observations:-
+-------------
+1. "master" --- in the git bash
+2. ".git" ---- hidden file created in the particular location. 
+
+3 stages :- 
+
+to create a file use ----- touch a b c ---like that
+
+
+working area - stage -1
+------------------------
+to add file a ------ git add a
+to add all files -----  git add . (or) git add * (or) git add -A
+
+to check status ------ git status ( if files are showing red colour -- working area )
+
+
+staging area - stage -2
+-----------------------
+git commit -m "i have developed code for ac" ------ is used for edit entered data and steps involved to create a code
+to check status - git status  --- green in colour
+
+local repository - stage-3
+---------------------------
+to check status - git log -- 
+edit data -  git commit -m "bug fixes for ac service"
+
+
+
+open those two files ( flipkart sales > 40% and flipkartsales) ---- in git bash s.w
+
+to check list --- use --- ls
+
+1st ---  step :-
+git init
+
+touch a b c 
+
+git satus 
+git add a b c  -- a b c  files moved to stage -2     
+
+										Changes to be committed:
+  										(use "git restore --staged <file>..." to unstage)
+
+git log --- you can check the files showing in green colour ( moved from s-1 to s-2 )
+
+git commit -m "my developer developed code"
+
+git add flipkartsale.txt
+
+git commit -m "sale code"
+git log
+
+
+git remote add origin https://github.com/Mohanvalmiki/flipkartac.git
+git push -u origin master
+
+you can check status by refreshing the page in the browser:-
+
+
+
+
+the following is my practice history:
+
+  133  ls
+  134  git init
+  135  ls
+  136  touch a b c
+  137  ls
+  138  git status
+  139  git add a b c
+  140  git add 40%.txt
+  141  git status
+  142  git commit -m "my dream is to build a house"
+  143  git add .
+  144  git status
+  145  git status
+  146  git commit -m "i want to but a car"
+  147  git remote add origin https://github.com/Mohanvalmiki/carloan.git
+  148  git push -u origin master
+  149  ls
+  150  history
+
+hp@DESKTOP-VN5GDQ3 MINGW64 /f/git project/loans/carloan (master)
+$
+
+
+3.8.2022 git -2 video
+----------------------
+
+repositers should be <200 and > 120 ---- average repositers for projects 
+
+all the developers will not have all the access overall
+particular developers will have particular access
+
+
+ 1.collaboration acesses :
+create repo and give access
+
+2.rename repository ----- settings > rename> enter
+free / public repository --- can download by anyone
+but you can't push any data for this particular repo ---- only who have collaboratory access they can push data.
+
+3. public repository coversion into private repo:-
+repostory >settings > scroll down > danger zone > change repo visibility > copy particular repo name > enter --it will chaneg.
+ 
+4.how to identify public repo over tens of repo's :-
+you can see lock symbol on particular repo
+
+5.how to delete the particular repo:
+settings > danger zone> tranfer ownership ................. is related to getting ownership from contract 
+
+aws is for maintaining servers
+git hub is for maintaining codes
+
+unless untill getting confirmation by mail
+
+settings > dangerzone > delete > confirm .
+
+6. notications
+settings> email notifications> enter email ids > click on conformation.
+
+we know that,
+folder = repository (git) =  directory (linux) ===== same 
+download = clone (git hub) ======= same
+
+7. how to download data from github:-
+create a folder at where you want > right click > open git bash here> use : git clone <paste that paricular url (inside the coad download down arrow)> enter
+
+to check ls
+
+to enter in that particular repository in that downloaded code in the git bash :-
+
+cd <repo name>
+
+ls
+
+
+8. checking (filtering logs ) :-
+-------------------
+
+git log
+
+ u wil go inside the file if u wnat to come out
+use 
+
+wq  (write and quit)
+
+git log based on author
+git log --author=mohan
+
+based on Time ----
+
+
+2015
+git log --since=yy-mm-dd 
+
+git log --since=2015-01-01    ---
+
+
+until
+
+2010
+
+2010- jan
+
+git log --until=yy--mm-dd --oneline --author=mohan
+git log --until=2019-06-01
+
+
+ git log --since=2022-08-01 --author=mohan --oneline
+
+practical example :-
+786c02b (HEAD -> master, origin/master, origin/HEAD) i want to but a car
+34baf7b my dream is to build a house
+
+
+
+
+
+video -3:- interview based question and answers:-
+--------------------------------------------------
+1. branching 
+
+in one reposiotary will have multiple branches 
+ 195  git clone https://github.com/Mohanvalmiki/flipkartac.git
+  196  ls
+  197  cd flipkart
+  198  cd flipkartac/
+  199  ls
+  200  exit
+  201  gitinit
+  202  git init
+  203  touch dummy
+  204  git add dummy
+  205  git commit -m  "sample commit"
+  206  touch a
+  207  ls
+  208  git add a
+  209  git status
+  210  git commit -m "a file developed by master"
+  211  git branch
+  212  git branch master1
+  213  ls
+  214  cd master1
+  215  git branch
+  216  git checkout master1
+  217  ls
+  218  touch b
+  219  git add b
+  220  git commit -m "b file commited by master1"
+  221  git log
+  222  git show sample commit
+  223  git show b4936af32d1770a43b34179c7ecbd6cacf264a64
+  224  tree
+  225  git branch master2
+  226  git branch
+  227  git checkout master2
+  228  ls
+  229  git checko master2
+  230  git checkout master
+  231  tree
+  232  git checkout master1
+  233  git checkout master
+  234  ls
+  235  git merge master1
+  236  ls
+  237  git checkout -b master50
+  238  git log
+  239  git  checkout master
+  240  git branch -d master50
+  241  git checkout -b master50
+  242  git branch -d master50
+  243  git branch -d master
+  244  git checkout -b master
+  245  git branch aug-release
+  246  git checkout master50
+  247  history
+
+
+
+to push data in a master50 data 
+
+create touch master50data
+git add master50data
+
+create a repo in git hub website
+
+copy url having git remote origin....
+paste in the github 
+
+git push -u origin master50
+
+to check : ls
+
+ 267  git clone -b master50  https://github.com/Mohanvalmiki/master50data.git
+  268  ls
+  269  cd master50/
+  270  ls
+  271  cd master50/
+  272  cd master50data/
+  273  ls
+  274  history
+
+
+
+3. stash memory :-
+---------------
+to store the data for the temporary purpose  - that to the files in stage -2 : staging area
+
+ 
+conflict error:-
+----------------
+
+interview points about git :-
+i used  to created reposits in the git hub and give collaborations access... ahh.. what are are the updated codes in the centrolised 
+repositers and build the code ..ahh..i used to set a conflict errors.
+
+
+when two developers are modified same file at two different branches, 
+whenever they merge the branches an error will takes place.that is called conflict error.
+
+343  git init
+  344  touch dummy
+  345  git add dummy
+  346  git commit -m "dummy"
+  347  touch a
+  348  vi a
+  349  git add a
+  350  git status
+  351  git commit -m "a file modified by master"
+  352  git checkout -b master1
+  353  ls
+  354  touch b
+  355  vi a
+  356  git add .
+  357  git add .
+  358  git commit -m "files modified by master1"
+  359  git checkout master
+  360  ls
+  361  vi a
+  362  vi a
+  363  git add a
+  364  git commit -m "re modified"
+  365  git merge master1
+  366  vi a
+  367  git add a
+  368  git commit -m "conflicts resolved with the help of developer mohan"
+  369  git log
+  370  history
+
+
+
+2. reset:-
+-----------
+
+1. working area    2. staging area    3. local repo
+
+in working area only we can modify data in  the file and repo's
+
+to come back from:-
+-------------------
+local repo - staging area   : git reset -soft commit id
+staging area - working area : git reset head <filename>
+local repo - working area : git reset -mixed commit id
+
+
+
+
+3. stash memory:-
+--------------------
+
+
+343  git init
+  344  touch dummy
+  345  git add dummy
+  346  git commit -m "dummy"
+  347  touch a
+  348  vi a
+  349  git add a
+  350  git status
+  351  git commit -m "a file modified by master"
+  352  git checkout -b master1
+  353  ls
+  354  touch b
+  355  vi a
+  356  git add .
+  357  git add .
+  358  git commit -m "files modified by master1"
+  359  git checkout master
+  360  ls
+  361  vi a
+  362  vi a
+  363  git add a
+  364  git commit -m "re modified"
+  365  git merge master1
+  366  vi a
+  367  git add a
+  368  git commit -m "conflicts resolved with the help of developer mohan"
+  369  git log
+  370  history
+  371  touch 1 2 3 4 5 6
+  372  git add .
+  373  git commit -m "1" 1
+  374  git commit -m "2" 2
+  375  git commit -m "3" 3
+  376  git commit -m "4" 4
+  377  git commit -m "5" 5
+  378  git commit -m "6" 6
+  379  clear
+  380  git log
+  381  git log --oneline
+  382  clear.
+  383  clear
+  384  git status
+  385  git log --oneline
+  386  git reset --soft 7679969
+  387  git log --oneline
+  388  git log
+  389  git reset --soft 11ec3c77552a4772b2258064a93d22c5e4c8fcfa
+  390  git reset --oneline
+  391  git log --oneline
+  392  ls
+  393  git status
+  394  git add 3
+  395  git status
+  396  git reset --mixed 46b1dd6
+  397  git log
+  398  git status
+  399  vi 2
+  400  git log --oneline
+  401  git tag latest-release
+  402  git log --oneline
+  403  git tag jan-release 0709a5d
+  404  git log --oneline
+  405  git tag
+  406  git tag feb-release 0709a5d
+  407  git tag
+  408  git remote add origin https://github.com/Mohanvalmiki/369.git
+  409  git push -u origin master
+  410  git push origin feb-release
+  411  git push feb-release
+  412  git tag
+  413  git push origin jan-release
+  414   git push *
+  415  git push origin --tags
+  416  git tag -d feb-release
+  417  git tag
+  418  git tag -d jan-release latest-release
+  419  git tag
+  420  git push --delete origin feb-release
+  421  git push -d *
+  422  git tag latest
+  423  git log
+  424  git tag -d $(git tag)
+  425  git log
+  426  git tag
+  427  git fetch
+  428  git push origin --delete $(tag -1)
+  429  git push origin --delete $(tag -1)
+  430  git tag
+  431  git push origin --delete $(git tag -1)
+  432  git push origin --delete $(git tag -1)
+  433  git tag
+  434  git fetch
+  435  git push origin --delete $(git tag -1)
+  436   history
+
+hp@DESKTOP-VN5GDQ3 MINGW64 ~/Desktop/PEM FILES/new data git hub/conflict error (master)
+$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+error:- git fecth
+git push origin --delete $(git tag -1)
+
+
+
+
+
+
+
+
+
+
+
+some important foemulae:
+$ git reset --oneline
+error: unknown option `oneline'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <pathspec>...
+   or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<pathspec>...]
+   or: DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
+
+    -q, --quiet           be quiet, only report errors
+    --no-refresh          skip refreshing the index after reset
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+    -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
+    --stdin               DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
+
+
+
+interview questions:-
+-----------------------
+what is the difference b/w git clone, git push, git fetch?
+
+these three commands doing same work..... these are regularly used cmds
+
+git clone -----> to download complete repository
+git pull = git fetch + git merge ------------- to download updated changes 
+git fetch = brings data from centrolized repo but not reflect on local repository
+git merge = it will store data in local repository
+
+
+
+the following history is related  to using git merge cmd using same file modification by two different developers on the same file
+
+ 444  ls
+  445  vi b
+  446  git add b
+  447  git status
+  448  git commit -m "b file modified by mohan"
+  449  git checkout -b master1
+  450  ls
+  451  vi b
+  452  git add b
+  453  git commit -m "re modified by master1"
+  454  git merege master1
+  455  vi b
+  456  git add b
+  457  git commit -m "conflicts resolved"
+  458  git log
+  459  vi b
+  460  git checkout master
+  461  ls
+  462  vi b
+  463  git add b
+  464  git merge master1
+  465  git commit -m "changes"
+  466  ls
+  467  vi b
+  468  git merge master1
+  469  vi b
+  470  history
+ 
+the following isthe practical proof 
+
+
+
+
+
+what is source code management / scm / sc repository
+
+git and github
+
+diff b/w git and github?
+git ---- software --- installed in the pc
+-----> to maintain all the repos and developers data
+
+github ---- is a centrolised repository ------- where you can store your updated code
+
+ for 3.5years  experince ......  @ resume :  i am working in gihub administratrion i.e..,
+          -----------------> i used to create repo's as per the developers requirement.
+              -----------------> giving collaboration access
+                  ------------------> sitting with the developers and resolved the conflict errors
+                          ------------------> if any new developers, i 'll conduct KT ( Knowledge Tranfer) programs to them. 
+
+if you add more .... you will face more questions like
+--------- how to configure username? how to unset user ? what is stash memory ? what is purpose of tags ? how to push tags? how to do reset ? diff b/w pop and apply? what are the three stages ? 
+
+
+ -------what about source code repositories?
+     ans : svn--> git  -----both are source code repositories.
+
+what is the diff b/w svn and git ?
+---- always asnwer that ia m working on git only since 3.5 years
+----- svn is a centralized repository.
+ ( he has to work centrally, no download option, developers should conncet internet continuously 24/7, if there is an internet probelm he can't work for that particular time
+
+
+-----  git is ditributed centralized repo 
+( diff users download and diff place working on it., he can work locally, internet is not needed, for uploading the code then only internet is needed.for each repo's previously 7$ charged, you can maintain multiple projects ..... previous company 
+140 repository ........ if they ask about repository name of the previous worked company ... no, i dont want to expose my clients information.   )
+
+
+
+alias:
+nickname.
+
+somedevelopers he may be not using the linux cmds, so for that purpose whatever the cmds he feel some more difficulty 
+he creates some alias cmdsand will use in shortterm.
+
+last video summer history >
+
+479  git init
+  480  ls
+  481  cd 369
+  482  cat 369
+  483  cat 369
+  484  cat branching/
+  485  touch a
+  486  history
+  487  git pull
+  488  ls
+  489  git pull
+  490  ls
+  491  cat hanok
+  492  exit
+  493  git init
+  494  ls
+  495  git pull
+  496  ls
+  497  git pull
+  498  ls
+  499  git fetch
+  500  ls
+  501  git branch
+  502  git branch -r
+  503  git checkout origin/master
+  504  git show
+  505  git checkout master
+  506  git merge
+  507  ls
+  508  git ls -l
+  509  git lfs
+  510  git config --list
+  511  git log
+  512  git log -3
+  513  git log -2
+  514  git log -2 --oneline
+  515  git log --oneline
+  516  git config --global alias.l "log --oneline"
+  517  git l
+  518  history -la
+  519  history -l
+  520  history
